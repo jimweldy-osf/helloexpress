@@ -1,6 +1,9 @@
 const express = require('express')
 const mustacheExpress = require('mustache-express')
-const app = express() 
+require('dotenv').config()
+const app = express()
+
+const PORT = process.env.PORT 
 
 // setting up Express to use Mustache Express as template pages 
 app.engine('mustache', mustacheExpress())
@@ -13,6 +16,6 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.listen(8080, () => {
+app.listen(PORT, () => {
     console.log('Server is running...')
 })
