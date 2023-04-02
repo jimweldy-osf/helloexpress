@@ -3,7 +3,8 @@ const mustacheExpress = require('mustache-express')
 require('dotenv').config()
 const app = express()
 
-const PORT = process.env.PORT 
+const PORT = process.env.PORT || 8081 
+
 
 // setting up Express to use Mustache Express as template pages 
 app.engine('mustache', mustacheExpress())
